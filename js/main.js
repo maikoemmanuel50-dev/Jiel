@@ -1,12 +1,9 @@
 /* ==========================================================================
    Jiel Restaurant — main.js
-   Smooth scrolling, reservation validation, and the shopping cart system.
+   Smooth scrolling, shopping cart, and WhatsApp reservation/order systems.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('reservation-form');
-  const message = document.getElementById('form-message');
-
   /* ---- Smooth scrolling for internal anchor links ---- */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
@@ -19,45 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  /* ---- Reservation form validation ---- */
-  if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const date = document.getElementById('date').value;
-      const time = document.getElementById('time').value;
-
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      const missing = [];
-      if (!name) missing.push('Name');
-      if (!email) {
-        missing.push('Email');
-      } else if (!emailRegex.test(email)) {
-        message.className = 'error';
-        message.textContent = 'Please enter a valid email address.';
-        return;
-      }
-      if (!phone) missing.push('Phone');
-      if (!date) missing.push('Date');
-      if (!time) missing.push('Time');
-
-      if (missing.length > 0) {
-        message.className = 'error';
-        message.textContent = 'Please fill in: ' + missing.join(', ') + '.';
-        return;
-      }
-
-      message.className = 'success';
-      message.textContent = 'Thank you! Your reservation request has been sent.';
-      form.reset();
-      document.getElementById('guests').value = '2';
-    });
-  }
 });
 
 /* ==========================================================================
@@ -80,12 +38,14 @@ function addToCart(button) {
 
   updateCart();
 
-  // Visual feedback
+  // Visual feedback (matches the burgundy button style)
   button.textContent = '✅ Added!';
-  button.style.background = '#5E2C2C';
+  button.style.background = '#F5E6D3';
+  button.style.color = '#5E2C2C';
   setTimeout(() => {
-    button.textContent = '➕ Add to Cart';
-    button.style.background = '#C9A96E';
+    button.textContent = '✚ Add to Cart';
+    button.style.background = '#5E2C2C';
+    button.style.color = '#F5E6D3';
   }, 1500);
 }
 
@@ -211,4 +171,41 @@ function sendOrder(event) {
   // the customer is updated via WhatsApp as the order moves
   // Received → Preparing → In Transit → Delivered.
   alert('📝 Order received! The restaurant will update you on WhatsApp as your order progresses (Preparing → In Transit → Delivered).');
+}
+
+/* ==========================================================================
+   RESERVATION SYSTEM - Send to WhatsApp
+   ========================================================================== */
+
+function sendReservation(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  const guests = document.getElementById('guests').value.trim();
+  const specialRequests = document.getElementById('specialRequests').value.trim();
+
+  if (!name || !phone || !date || !time) {
+    alert('⚠️ Please fill in Name, Phone, Date, and Time.');
+    return;
+  }
+
+  let message = '📋 *NEW RESERVATION - JIEL* 📋%0A%0A';
+  message += `👤 *Name:* ${name}%0A`;
+  message += `📧 *Email:* ${email || 'Not provided'}%0A`;
+  message += `📞 *Phone:* ${phone}%0A`;
+  message += `📅 *Date:* ${date}%0A`;
+  message += `🕐 *Time:* ${time}%0A`;
+  message += `👥 *Guests:* ${guests || '1'}%0A`;
+  if (specialRequests) message += `📝 *Special Requests:* ${specialRequests}%0A`;
+  message += `%0A✅ Reservation request received. We will confirm shortly!`;
+
+  const whatsappUrl = `https://wa.me/254715536736?text=${message}`;
+  window.open(whatsappUrl, '_blank');
+
+  document.getElementById('reservationSuccess').style.display = 'block';
+  document.getElementById('reservationForm').reset();
 }
