@@ -1,0 +1,461 @@
+/* ==========================================================================
+   Jiel Restaurant — Warm Minimalism
+   ========================================================================== */
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --burgundy: #5E2C2C;
+  --burgundy-dark: #472020;
+  --beige: #F5E6D3;
+  --beige-light: #FBF3E8;
+  --charcoal: #2C2C2C;
+  --gold: #C9A96E;
+  --gold-dark: #8C6D3F;
+  --white: #FFFFFF;
+  --muted: #5C5348;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--beige);
+  color: var(--charcoal);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 84px; /* room for the fixed sticky CTA */
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  color: var(--burgundy);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  color: var(--burgundy);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--burgundy);
+  color: var(--beige-light);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--burgundy-dark);
+  box-shadow: 0 6px 18px rgba(94, 44, 44, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: rgba(94, 44, 44, 0.08);
+}
+
+.btn-lg {
+  padding: 1rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---- Sticky Call-to-Action ---- */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(245, 230, 211, 0.72);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(94, 44, 44, 0.12);
+}
+
+.sticky-cta .btn {
+  flex: 1;
+}
+
+/* ---- Hero ---- */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  background:
+    linear-gradient(rgba(44, 20, 20, 0.55), rgba(44, 20, 20, 0.65)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600') center / cover no-repeat;
+  color: var(--beige-light);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(44, 20, 20, 0.25), rgba(44, 20, 20, 0.55));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 0.9s ease both;
+}
+
+.hero-content h1 {
+  font-size: 3.4rem;
+  color: var(--beige-light);
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  margin: 0.75rem 0 1.75rem;
+  color: #FBF3E8;
+}
+
+/* ---- Sections ---- */
+.section {
+  padding: 3.5rem 1.25rem;
+}
+
+.section-alt {
+  background: var(--beige-light);
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Menu ---- */
+.menu-category {
+  margin-bottom: 2rem;
+}
+
+.menu-category-title {
+  font-size: 1.35rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+}
+
+.menu-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.menu-item {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 2px 10px rgba(44, 44, 44, 0.06);
+}
+
+.menu-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.menu-item h4 {
+  font-size: 1.08rem;
+}
+
+.menu-item .price {
+  font-weight: 600;
+  color: var(--gold-dark);
+  white-space: nowrap;
+}
+
+.menu-item p {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---- About ---- */
+.about-text {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+/* ---- Location ---- */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.location-info h3 {
+  font-size: 1.15rem;
+  margin-top: 1rem;
+}
+
+.location-info h3:first-child {
+  margin-top: 0;
+}
+
+.location-info address {
+  font-style: normal;
+  color: var(--muted);
+}
+
+.hours {
+  color: var(--charcoal);
+}
+
+.map-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(44, 44, 44, 0.1);
+  min-height: 260px;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  border: 0;
+}
+
+/* ---- Forms ---- */
+#reservation-form {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--charcoal);
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(44, 44, 44, 0.2);
+  background: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--charcoal);
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.35);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+#form-message {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+  min-height: 1.5em;
+}
+
+#form-message.success {
+  color: #2E6B34;
+}
+
+#form-message.error {
+  color: #A33A2B;
+}
+
+/* ---- Footer ---- */
+footer {
+  background: var(--burgundy-dark);
+  color: var(--beige);
+  padding: 1.75rem 1.25rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-links a {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  color: var(--beige-light);
+}
+
+/* ---- Chatbot float ---- */
+.chat-float {
+  position: fixed;
+  bottom: 92px;
+  right: 16px;
+  z-index: 999;
+  background: var(--burgundy);
+  color: var(--beige-light);
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(44, 44, 44, 0.3);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.chat-float:hover {
+  background: var(--burgundy-dark);
+  transform: translateY(-2px);
+}
+
+/* ---- Animation ---- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Tablet (768px) ---- */
+@media (min-width: 768px) {
+  .section {
+    padding: 4.5rem 2rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* ---- Desktop (1024px) ---- */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-content h1 {
+    font-size: 5.5rem;
+  }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-content {
+    animation: none;
+  }
+
+  .btn,
+  .chat-float {
+    transition: none;
+  }
+}
