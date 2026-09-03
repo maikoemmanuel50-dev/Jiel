@@ -144,23 +144,23 @@ function sendOrder(event) {
     return;
   }
 
-  let message = '🍽️ *NEW ORDER FROM JIEL* 🍽️%0A%0A';
-  message += `👤 *Customer:* ${name}%0A`;
-  message += `📞 *Phone:* ${phone}%0A`;
-  if (address) message += `📍 *Address:* ${address}%0A`;
-  message += `%0A📋 *Order Details:*%0A`;
+  let message = '🍽️ *NEW ORDER FROM JIEL* 🍽️\n\n';
+  message += `👤 *Customer:* ${name}\n`;
+  message += `📞 *Phone:* ${phone}\n`;
+  if (address) message += `📍 *Address:* ${address}\n`;
+  message += '\n📋 *Order Details:*\n';
 
   cart.forEach((item) => {
-    message += `- ${item.item} × ${item.quantity} = KSh ${(item.price * item.quantity).toFixed(2)}%0A`;
+    message += `- ${item.item} × ${item.quantity} = KSh ${(item.price * item.quantity).toFixed(2)}\n`;
   });
 
-  message += `%0A💰 *Total: KSh ${cartTotal.toFixed(2)}*%0A`;
+  message += `\n💰 *Total: KSh ${cartTotal.toFixed(2)}*\n`;
 
-  if (notes) message += `%0A📝 *Special Instructions:* ${notes}%0A`;
+  if (notes) message += `\n📝 *Special Instructions:* ${notes}\n`;
 
-  message += `%0A✅ Thank you for ordering from Jiel!`;
+  message += '\n✅ Thank you for ordering from Jiel!';
 
-  const whatsappUrl = `https://wa.me/254715536736?text=${message}`;
+  const whatsappUrl = `https://wa.me/254715536736?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 
   cart = [];
@@ -193,17 +193,17 @@ function sendReservation(event) {
     return;
   }
 
-  let message = '📋 *NEW RESERVATION - JIEL* 📋%0A%0A';
-  message += `👤 *Name:* ${name}%0A`;
-  message += `📧 *Email:* ${email || 'Not provided'}%0A`;
-  message += `📞 *Phone:* ${phone}%0A`;
-  message += `📅 *Date:* ${date}%0A`;
-  message += `🕐 *Time:* ${time}%0A`;
-  message += `👥 *Guests:* ${guests || '1'}%0A`;
-  if (specialRequests) message += `📝 *Special Requests:* ${specialRequests}%0A`;
-  message += `%0A✅ Reservation request received. We will confirm shortly!`;
+  let message = '📋 *NEW RESERVATION - JIEL* 📋\n\n';
+  message += `👤 *Name:* ${name}\n`;
+  message += `📧 *Email:* ${email || 'Not provided'}\n`;
+  message += `📞 *Phone:* ${phone}\n`;
+  message += `📅 *Date:* ${date}\n`;
+  message += `🕐 *Time:* ${time}\n`;
+  message += `👥 *Guests:* ${guests || '1'}\n`;
+  if (specialRequests) message += `📝 *Special Requests:* ${specialRequests}\n`;
+  message += '\n✅ Reservation request received. We will confirm shortly!';
 
-  const whatsappUrl = `https://wa.me/254715536736?text=${message}`;
+  const whatsappUrl = `https://wa.me/254715536736?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 
   document.getElementById('reservationSuccess').style.display = 'block';
