@@ -9,18 +9,22 @@ This is a single-page restaurant website featuring a warm, minimal aesthetic. It
 ## Features
 
 - **Mobile-first design** — responsive layout from 320px up through tablet (768px) and desktop (1024px+).
-- **Live text menu** — three categories (Appetizers, Mains, Desserts) with three items each, rendered as semantic HTML (no PDFs).
-- **Reservation form** — client-side validation for name, email, phone, date, and time, with dynamic success/error messaging.
-- **Sticky call-to-action bar** — fixed bottom bar with "Book a Table" and "View Menu" buttons and a glassmorphism blur effect.
+- **Live text menu** — three categories (Snacks, Mains, Drinks) with multiple items each, rendered as semantic HTML (no PDFs).
+- **Shopping cart & WhatsApp ordering** — add items to a cart, review them in a sidebar, and send the order to the restaurant via WhatsApp.
+- **Reservation form** — sends reservation requests to the restaurant via WhatsApp, with client-side validation.
+- **Sticky call-to-action bar** — fixed bottom bar with "Order Online Now" and "View Menu" buttons and a glassmorphism blur effect.
+- **Google Maps** — embedded map pinned to the JIEL business location.
 - **Smooth scrolling** — internal anchor navigation scrolls smoothly.
-- **AI-ready** — a floating "Ask Jiel" button is wired to a placeholder handler that logs `Chatbot triggered` to the console; this will later connect to the local Harness AI.
+- **WhatsApp "Ask Jiel" button** — a floating button that opens a WhatsApp chat with the restaurant.
 
 ## File Structure
 
 ```
 index.html          — page markup
 css/style.css       — Warm Minimalism styling
-js/main.js          — validation, smooth scroll, chatbot placeholder
+js/main.js          — cart, ordering, reservations, smooth scroll
+robots.txt          — search-engine crawl rules
+sitemap.xml         — sitemap for search engines
 README.md           — this file
 ```
 
