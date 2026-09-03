@@ -44,8 +44,8 @@ function addToCart(button) {
   button.style.color = '#5E2C2C';
   setTimeout(() => {
     button.textContent = '✚ Add to Cart';
-    button.style.background = '#5E2C2C';
-    button.style.color = '#F5E6D3';
+    button.style.background = '';
+    button.style.color = '';
   }, 1500);
 }
 

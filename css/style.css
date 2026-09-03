@@ -233,6 +233,29 @@ img {
   font-size: 0.95rem;
 }
 
+.add-to-cart {
+  background: #5E2C2C;
+  color: #F5E6D3;
+  border: 2px solid #5E2C2C;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);
+}
+
+.add-to-cart:hover,
+.add-to-cart:focus-visible {
+  background: #F5E6D3;
+  color: #5E2C2C;
+  border-color: #5E2C2C;
+}
+
 /* ---- About ---- */
 .about-text {
   max-width: 42rem;
