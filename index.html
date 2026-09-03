@@ -6,7 +6,7 @@
   <meta name="description" content="Jiel — authentic flavors and warm hospitality. Explore our live menu, discover our story, and order online.">
 
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' http://127.0.0.1:3080;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' http://127.0.0.1:3080; frame-src https://www.google.com https://maps.google.com;">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Jiel Restaurant">
@@ -55,18 +55,21 @@
 
       <button onclick="checkout()" style="
           width: 100%;
-          background: #5E2C2C;
-          color: white;
+          background: linear-gradient(135deg, #5E2C2C, #7A3B3B);
+          color: #F5E6D3;
           border: none;
-          padding: 15px;
+          padding: 16px;
           border-radius: 12px;
           font-size: 18px;
-          font-weight: bold;
+          font-weight: 700;
           cursor: pointer;
           margin-top: 15px;
-          transition: background 0.2s;
-      " onmouseover="this.style.background='#7A3B3B'" onmouseout="this.style.background='#5E2C2C'">
-          📝 Checkout
+          transition: all 0.3s ease;
+          font-family: 'Inter', sans-serif;
+          letter-spacing: 1px;
+          box-shadow: 0 4px 15px rgba(94, 44, 44, 0.3);
+      " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 25px rgba(94, 44, 44, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(94, 44, 44, 0.3)';">
+          📝 Proceed to Checkout
       </button>
   </div>
 
@@ -131,7 +134,7 @@
                 <span class="price">KSh 50</span>
               </div>
               <p>Crispy, golden samosas you'll definitely enjoy.</p>
-              <button class="add-to-cart" data-item="Samosa" data-price="50" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Samosa" data-price="50" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -139,7 +142,7 @@
                 <span class="price">KSh 70</span>
               </div>
               <p>Sausage-smokie combo with sauces that tingle your taste buds.</p>
-              <button class="add-to-cart" data-item="Smocha" data-price="70" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Smocha" data-price="70" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -147,7 +150,7 @@
                 <span class="price">KSh 100</span>
               </div>
               <p>Slow-roasted kebabs with smoky char and herb seasoning.</p>
-              <button class="add-to-cart" data-item="Roasted Kebab" data-price="100" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Roasted Kebab" data-price="100" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -155,7 +158,7 @@
                 <span class="price">KSh 40</span>
               </div>
               <p>The best smoked sausages in town.</p>
-              <button class="add-to-cart" data-item="Smokie" data-price="40" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Smokie" data-price="40" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -163,7 +166,7 @@
                 <span class="price">KSh 60</span>
               </div>
               <p>Finger-licking beef sausages.</p>
-              <button class="add-to-cart" data-item="Sausages" data-price="60" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Sausages" data-price="60" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
           </ul>
         </div>
@@ -177,7 +180,7 @@
                 <span class="price">KSh 130</span>
               </div>
               <p>Crispy fries cooked to perfection.</p>
-              <button class="add-to-cart" data-item="Chips" data-price="130" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Chips" data-price="130" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -185,7 +188,7 @@
                 <span class="price">KSh 250</span>
               </div>
               <p>Marinated chicken with rosemary, garlic and lemon.</p>
-              <button class="add-to-cart" data-item="Chicken" data-price="250" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Chicken" data-price="250" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -193,7 +196,7 @@
                 <span class="price">KSh 150</span>
               </div>
               <p>Flavorful fried rice with vegetables and egg.</p>
-              <button class="add-to-cart" data-item="Fried rice" data-price="150" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Fried rice" data-price="150" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -201,7 +204,7 @@
                 <span class="price">KSh 250</span>
               </div>
               <p>Chicken and beef burgers smothered in cheese.</p>
-              <button class="add-to-cart" data-item="Burgers" data-price="250" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Burgers" data-price="250" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
           </ul>
         </div>
@@ -215,7 +218,7 @@
                 <span class="price">KSh 70</span>
               </div>
               <p>Refreshing soda of your choice.</p>
-              <button class="add-to-cart" data-item="Soda" data-price="70" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Soda" data-price="70" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -223,7 +226,7 @@
                 <span class="price">KSh 90</span>
               </div>
               <p>Freshly blended juices.</p>
-              <button class="add-to-cart" data-item="Afia juice" data-price="90" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Afia juice" data-price="90" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
             <li class="menu-item">
               <div class="menu-item-head">
@@ -231,7 +234,7 @@
                 <span class="price">KSh 70</span>
               </div>
               <p>Chilled bottled water.</p>
-              <button class="add-to-cart" data-item="Water" data-price="70" onclick="addToCart(this)" style="background: #C9A96E; color: white; border: none; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; margin-top: 8px; transition: background 0.2s;" onmouseover="this.style.background='#B8975E'" onmouseout="this.style.background='#C9A96E'">➕ Add to Cart</button>
+              <button class="add-to-cart" data-item="Water" data-price="70" onclick="addToCart(this)" style="background: #5E2C2C; color: #F5E6D3; border: 2px solid #5E2C2C; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; margin-top: 10px; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);" onmouseover="this.style.background='#F5E6D3'; this.style.color='#5E2C2C'; this.style.borderColor='#5E2C2C';" onmouseout="this.style.background='#5E2C2C'; this.style.color='#F5E6D3'; this.style.borderColor='#5E2C2C';">✚ Add to Cart</button>
             </li>
           </ul>
         </div>
@@ -266,7 +269,11 @@
           <div class="map-wrap">
             <iframe
               title="Jiel Restaurant location map"
-              src="https://maps.google.com/maps?q=Kisii&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63815.49032486225!2d34.7656!3d-0.6801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182b1e6d2b6c44f1%3A0x5c6f6e2b5c6f6e2!2sKisii%2C%20Kenya!5e0!3m2!1sen!2s!4v1234567890"
+              width="100%"
+              height="350"
+              style="border:0; display:block;"
+              allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
@@ -374,64 +381,76 @@
           overflow-y: auto;
           box-shadow: 0 20px 60px rgba(0,0,0,0.3);
       ">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #5E2C2C; padding-bottom: 15px;">
-              <h2 style="color: #5E2C2C; margin: 0;">📋 Order Today</h2>
-              <button onclick="closeCheckout()" style="background: none; border: none; font-size: 28px; cursor: pointer; color: #5E2C2C;">✕</button>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #C9A96E; padding-bottom: 15px;">
+              <h2 style="color: #5E2C2C; margin: 0; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 24px;">📋 Order Today</h2>
+              <button onclick="closeCheckout()" style="background: none; border: none; font-size: 28px; cursor: pointer; color: #5E2C2C; transition: transform 0.2s;" onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='rotate(0)'">✕</button>
           </div>
 
-          <div id="orderSummary" style="margin: 20px 0; background: #F5E6D3; padding: 15px; border-radius: 12px;">
-              <p style="font-weight: bold; color: #5E2C2C;">Your Order:</p>
-              <div id="checkoutItems" style="font-size: 14px;"></div>
-              <div id="checkoutTotal" style="font-weight: bold; margin-top: 10px; font-size: 18px; color: #5E2C2C;"></div>
+          <div id="orderSummary" style="
+              margin: 20px 0;
+              background: linear-gradient(135deg, #F5E6D3, #FAF0E8);
+              padding: 20px;
+              border-radius: 12px;
+              border-left: 4px solid #C9A96E;
+          ">
+              <p style="font-weight: 700; color: #5E2C2C; font-size: 16px; margin-bottom: 10px;">🛒 Your Order:</p>
+              <div id="checkoutItems" style="font-size: 15px; color: #2C2C2C; line-height: 1.8;"></div>
+              <div id="checkoutTotal" style="font-weight: 700; margin-top: 12px; font-size: 20px; color: #5E2C2C; border-top: 2px dashed #C9A96E; padding-top: 10px;"></div>
           </div>
 
           <form id="orderForm" onsubmit="sendOrder(event)">
               <div style="margin-bottom: 15px;">
                   <label style="display: block; font-weight: 600; margin-bottom: 5px; color: #5E2C2C;">Full Name *</label>
-                  <input type="text" id="customerName" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;">
+                  <input type="text" id="customerName" required placeholder="Enter your full name" style="width: 100%; padding: 14px 16px; border: 2px solid #e8e0d8; border-radius: 10px; font-size: 16px; font-family: 'Inter', sans-serif; transition: border-color 0.3s ease; background: #FAF8F5; color: #2C2C2C;" onfocus="this.style.borderColor='#C9A96E';" onblur="this.style.borderColor='#e8e0d8';">
               </div>
 
               <div style="margin-bottom: 15px;">
                   <label style="display: block; font-weight: 600; margin-bottom: 5px; color: #5E2C2C;">Phone Number *</label>
-                  <input type="tel" id="customerPhone" required placeholder="0715536736" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;">
+                  <input type="tel" id="customerPhone" required placeholder="0715536736" style="width: 100%; padding: 14px 16px; border: 2px solid #e8e0d8; border-radius: 10px; font-size: 16px; font-family: 'Inter', sans-serif; transition: border-color 0.3s ease; background: #FAF8F5; color: #2C2C2C;" onfocus="this.style.borderColor='#C9A96E';" onblur="this.style.borderColor='#e8e0d8';">
               </div>
 
               <div style="margin-bottom: 15px;">
                   <label style="display: block; font-weight: 600; margin-bottom: 5px; color: #5E2C2C;">Delivery Address</label>
-                  <input type="text" id="customerAddress" placeholder="e.g., Along Jogoo, Stage Miwa" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;">
+                  <input type="text" id="customerAddress" placeholder="e.g., Along Jogoo, Stage Miwa" style="width: 100%; padding: 14px 16px; border: 2px solid #e8e0d8; border-radius: 10px; font-size: 16px; font-family: 'Inter', sans-serif; transition: border-color 0.3s ease; background: #FAF8F5; color: #2C2C2C;" onfocus="this.style.borderColor='#C9A96E';" onblur="this.style.borderColor='#e8e0d8';">
               </div>
 
               <div style="margin-bottom: 15px;">
                   <label style="display: block; font-weight: 600; margin-bottom: 5px; color: #5E2C2C;">Special Instructions</label>
-                  <textarea id="customerNotes" rows="3" placeholder="Any special requests?" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;"></textarea>
+                  <textarea id="customerNotes" rows="3" placeholder="Any special requests? (e.g., extra spicy, no onions)" style="width: 100%; padding: 14px 16px; border: 2px solid #e8e0d8; border-radius: 10px; font-size: 16px; font-family: 'Inter', sans-serif; transition: border-color 0.3s ease; background: #FAF8F5; color: #2C2C2C; resize: vertical;" onfocus="this.style.borderColor='#C9A96E';" onblur="this.style.borderColor='#e8e0d8';"></textarea>
               </div>
 
               <button type="submit" style="
                   width: 100%;
-                  background: #25D366;
+                  background: linear-gradient(135deg, #25D366, #20B859);
                   color: white;
                   border: none;
-                  padding: 15px;
+                  padding: 16px;
                   border-radius: 12px;
                   font-size: 18px;
-                  font-weight: bold;
+                  font-weight: 700;
                   cursor: pointer;
-                  transition: background 0.2s;
-              " onmouseover="this.style.background='#20B859'" onmouseout="this.style.background='#25D366'">
-                  📤 Send Request via WhatsApp
+                  transition: all 0.3s ease;
+                  font-family: 'Inter', sans-serif;
+                  letter-spacing: 1px;
+                  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 30px rgba(37, 211, 102, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(37, 211, 102, 0.3)';">
+                  📤 Send Order via WhatsApp
               </button>
 
               <button type="button" onclick="clearCart()" style="
                   width: 100%;
-                  background: #ddd;
-                  color: #666;
-                  border: none;
+                  background: transparent;
+                  color: #999;
+                  border: 2px solid #ddd;
                   padding: 12px;
                   border-radius: 12px;
                   font-size: 14px;
+                  font-weight: 600;
                   cursor: pointer;
                   margin-top: 10px;
-              ">
+                  transition: all 0.3s ease;
+                  font-family: 'Inter', sans-serif;
+              " onmouseover="this.style.borderColor='#ff4444'; this.style.color='#ff4444';" onmouseout="this.style.borderColor='#ddd'; this.style.color='#999';">
                   🗑️ Clear Cart
               </button>
           </form>
