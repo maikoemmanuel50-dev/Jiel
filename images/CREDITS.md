@@ -1,5 +1,17 @@
 # Image credits — jiel site
 
+## Photographs supplied directly by the owner (replaced tiles)
+
+Originals are archived in `Asset folder/gallery-sources/`.
+
+- `gallery-chapati` — supplied by the owner (source 547x365, upscaled 1.65x).
+- `gallery-mandazi` — supplied by the owner. **Note:** the full original carries a
+  visible "Copyright Jagruti's Cooking Odyssey" watermark; the 4:3 crop used on the
+  site falls above it, so no watermark is published. The underlying photograph is
+  third-party material, so permission is needed before commercial use.
+- `gallery-beef-stew` — supplied by the owner (source 1920x1440).
+- `gallery-fruit` — supplied by the owner (source 638x480, upscaled 1.25x).
+
 ## Photographs from the restaurant's own menu
 
 `snacks-samosa` is a CC0 stock photo; all other category images plus
