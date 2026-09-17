@@ -9,7 +9,7 @@ This is a single-page restaurant website featuring a warm, minimal aesthetic. It
 ## Features
 
 - **Mobile-first design** — responsive layout from 320px up through tablet (768px) and desktop (1024px+).
-- **Live text menu** — three categories (Snacks, Mains, Drinks) with multiple items each, rendered as semantic HTML (no PDFs).
+- **Live text menu** — six categories (Snacks, Mains, Drinks, Herbal Teas, Fresh Juice, Fruits) with multiple items each, rendered as semantic HTML (no PDFs).
 - **Shopping cart & WhatsApp ordering** — add items to a cart, review them in a sidebar, and send the order to the restaurant via WhatsApp.
 - **Reservation form** — sends reservation requests to the restaurant via WhatsApp, with client-side validation.
 - **Sticky call-to-action bar** — fixed bottom bar with "Order Online Now" and "View Menu" buttons and a glassmorphism blur effect.
