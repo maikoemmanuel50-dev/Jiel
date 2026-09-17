@@ -10,6 +10,7 @@ This is a single-page restaurant website featuring a warm, minimal aesthetic. It
 
 - **Mobile-first design** — responsive layout from 320px up through tablet (768px) and desktop (1024px+).
 - **Live text menu** — six categories (Snacks, Mains, Drinks, Herbal Teas, Fresh Juice, Fruits) with multiple items each, rendered as semantic HTML (no PDFs).
+- **Photography** — each menu category is marked with a circular photo from the printed menu, and a "From Our Kitchen" band on the brand green shows a twelve-photo gallery. All images are self-hosted, lazy-loaded, and credited in `images/CREDITS.md`.
 - **Shopping cart & WhatsApp ordering** — add items to a cart, review them in a sidebar, and send the order to the restaurant via WhatsApp.
 - **Reservation form** — sends reservation requests to the restaurant via WhatsApp, with client-side validation.
 - **Sticky call-to-action bar** — fixed bottom bar with "Order Online Now" and "View Menu" buttons and a glassmorphism blur effect.
@@ -21,8 +22,9 @@ This is a single-page restaurant website featuring a warm, minimal aesthetic. It
 
 ```
 index.html          — page markup
-css/style.css       — Warm Minimalism styling
+css/style.css       — Warm Minimalism styling (+ brand green photo band)
 js/main.js          — cart, ordering, reservations, smooth scroll
+images/             — category and gallery photographs, plus CREDITS.md
 robots.txt          — search-engine crawl rules
 sitemap.xml         — sitemap for search engines
 README.md           — this file
