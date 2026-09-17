@@ -234,26 +234,30 @@ img {
 }
 
 .add-to-cart {
-  background: #5E2C2C;
-  color: #F5E6D3;
-  border: 2px solid #5E2C2C;
-  padding: 8px 20px;
-  border-radius: 25px;
+  background: transparent;
+  color: var(--burgundy);
+  border: 1px solid rgba(94, 44, 44, 0.28);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: all 0.3s ease;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-top: 0.85rem;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   font-family: 'Inter', sans-serif;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(94, 44, 44, 0.2);
+  letter-spacing: 0.2px;
 }
 
 .add-to-cart:hover,
 .add-to-cart:focus-visible {
-  background: #F5E6D3;
-  color: #5E2C2C;
-  border-color: #5E2C2C;
+  background: rgba(94, 44, 44, 0.06);
+  border-color: var(--burgundy);
+}
+
+.add-to-cart.is-added {
+  background: rgba(94, 44, 44, 0.08);
+  border-color: var(--burgundy);
+  color: var(--burgundy-dark);
 }
 
 /* ---- About ---- */

@@ -38,14 +38,12 @@ function addToCart(button) {
 
   updateCart();
 
-  // Visual feedback (matches the burgundy button style)
-  button.textContent = '✅ Added!';
-  button.style.background = '#F5E6D3';
-  button.style.color = '#5E2C2C';
+  // Visual feedback (styling lives in the .is-added class)
+  button.classList.add('is-added');
+  button.textContent = '✓ Added';
   setTimeout(() => {
-    button.textContent = '✚ Add to Cart';
-    button.style.background = '';
-    button.style.color = '';
+    button.textContent = 'Add to cart';
+    button.classList.remove('is-added');
   }, 1500);
 }
 
