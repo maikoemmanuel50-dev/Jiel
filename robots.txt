@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jiel.netlify.app/sitemap.xml
+Sitemap: https://maikoemmanuel50-dev.github.io/Jiel/sitemap.xml
