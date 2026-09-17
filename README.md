@@ -32,17 +32,39 @@ README.md           — this file
 
 ## Deployment
 
-### Netlify
+The site is plain static files — there is no build step, and every host below
+serves this repository root as-is.
 
-1. Go to [netlify.com](https://www.netlify.com) and sign in.
-2. Drag and drop this folder into the Netlify dashboard, or connect a Git repository and push it.
-3. Netlify serves the static files automatically.
+### Cloudflare Pages (primary — https://jiel.pages.dev)
 
-### Vercel
+Connected through Cloudflare's Git integration, so every push to `main`
+redeploys automatically. One-time dashboard setup:
 
-1. Go to [vercel.com](https://vercel.com) and sign in.
-2. Run `vercel` in this folder, or import the repository via the Vercel dashboard.
-3. Vercel builds and deploys the static site.
+1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
+2. Authorise GitHub and select `maikoemmanuel50-dev/Jiel`, branch `main`.
+3. Build settings:
+   - **Framework preset:** None
+   - **Build command:** *(leave empty)*
+   - **Build output directory:** `/`
+4. **Project name:** `jiel` — this decides the free address, `https://jiel.pages.dev`.
+5. **Save and Deploy.**
+
+Cloudflare Pages honours `_headers`, so the security headers in that file
+(HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy) and the
+`frame-ancestors` CSP directive are applied to every response.
+
+### GitHub Pages (mirror — https://maikoemmanuel50-dev.github.io/Jiel/)
+
+Published from `main` / root; `.nojekyll` stops Jekyll from processing the files.
+GitHub Pages **ignores `_headers`**, so it sends none of the security headers
+above, and it carries a soft 100 GB/month bandwidth limit.
+
+### Netlify (configured but blocked)
+
+`jiel.netlify.app` is still linked to this repository, but the account refuses
+every deploy with `Account credit usage exceeded - new deploys are blocked until
+credits are added`. Its published copy is stuck on an older menu, and its QR
+poster still points there — regenerate that QR for `jiel.pages.dev`.
 
 ### Local preview
 
@@ -50,6 +72,7 @@ Open `index.html` directly in a browser, or serve the folder with any static ser
 
 ## Security Notes
 
-- A **Content Security Policy (CSP)** is defined in a `<meta>` tag to restrict script, style, image, font, and connection sources to trusted origins.
+- **Security headers** are declared in `_headers` (CSP, HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy). They only take effect on hosts that read that file — Cloudflare Pages does; GitHub Pages does not.
+- A **Content Security Policy (CSP)** is also defined in a `<meta>` tag, so the policy still applies on hosts that ignore `_headers`. Note `frame-ancestors` is only honoured when delivered as a header.
 - Only local (`self`), data, and explicitly-allowed HTTPS resources are permitted; no third-party scripts are used.
-- In production, ensure the hosting provider serves the site over **HTTPS** (Netlify and Vercel do this automatically) so the CSP and secure defaults remain effective.
+- In production, ensure the hosting provider serves the site over **HTTPS** (Cloudflare Pages and GitHub Pages do this automatically) so the CSP and secure defaults remain effective.

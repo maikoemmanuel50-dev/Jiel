@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maikoemmanuel50-dev.github.io/Jiel/sitemap.xml
+Sitemap: https://jiel.pages.dev/sitemap.xml
